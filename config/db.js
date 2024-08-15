@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 
 function connectDB() {
     // Connect to local MongoDB
-    mongoose.connect('mongodb://localhost:27017/quick-share', {
+    mongoose.connect(process.env.MONGO_CONNECTION_URL, {
+    // mongoose.connect('mongodb://localhost:27017/quick-share', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
